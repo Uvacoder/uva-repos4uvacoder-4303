@@ -41,7 +41,7 @@ export default {
         .then(res => (this.colors = res.data));
     },
     getRepos() {
-      axios.get("https://api.github.com/users/uvacoder/repos").then(res => {
+      axios.get("https://api.github.com/users/uvacoder/repos?q=stars%3A%3E0&sort=stars").then(res => {
         this.repos = res.data
           .filter(repo => !repo.fork)
           .sort(
