@@ -47,7 +47,7 @@ export default {
           .sort(
             (repo1, repo2) => repo2.stargazers_count - repo1.stargazers_count
           )
-          .slice(0, 20);
+          .slice(0, 50);
       });
     }
   },
