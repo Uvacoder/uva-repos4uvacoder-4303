@@ -2,7 +2,7 @@
   <div class="container">
     <header class="pt-4">
       <h2 class="font-bold text-lg md:text-2xl">
-        Github Repositories
+        GitHub Repositories for uvacoder
       </h2>
     </header>
     <div v-if="repos && repos.length > 0" class="flex flex-wrap pt-4 md:-mr-6">
@@ -40,8 +40,8 @@ export default {
         )
         .then(res => (this.colors = res.data));
     },
-    getRepos() {
-      axios.get("https://api.github.com/users/uvacoder/repos?q=stars%3A%3E0&sort=stars").then(res => {
+    getRepos() {         
+      axios.get("https://api.github.com/users/uvacoder/repos?q=stars&sort=stars&order=desc").then(res => {
         this.repos = res.data
           .filter(repo => !repo.fork)
           .sort(
